@@ -7,8 +7,8 @@
 5. 執行 `gulp -v` 可以看到 global / local 的 gulp 版本
 
 ## Hello gulp
-1. 在專案目錄下建立一個 gulpfile.js 的檔案
-2. 寫入以下程式
+    1. 在專案目錄下建立一個 gulpfile.js 的檔案
+    2. 寫入以下程式
 ``` js
 var gulp = require('gulp');
 
@@ -18,7 +18,7 @@ function HelloGulpFunc() {
 
 gulp.task('default', HelloGulpFunc);
 ```
-3. 執行 `gulp` 或是 `gulp default`
+    3. 執行 `gulp` 或是 `gulp default`
 ```
 C:\wamp\www\test\Gulp>gulp
 [09:46:30] Using gulpfile C:\wamp\www\test\Gulp\gulpfile.js
@@ -33,8 +33,8 @@ C:\wamp\www\test\Gulp>
 ps. `npm ls` 可以看到目前 project 下所裝的套件
 
 ## gulp-webserver
-1. 執行 `npm install gulp-webserver --save-dev`
-2. 在 gulpfile.js 繼續寫入相關程式
+    1. 執行 `npm install gulp-webserver --save-dev`
+    2. 在 gulpfile.js 繼續寫入相關程式
 ``` js
 var gulp = require('gulp');
 var webserver = require('gulp-webserver');
@@ -55,12 +55,12 @@ gulp.task('default', ['webserver']);
 ```
 
 ## 打包壓縮 CSS 與 JS
-1. 執行 `npm install gulp-minify-css gulp-uglify gulp-concat gulp-rename --save-dev` <br>
-    gulp-minify-css: css 壓縮 <br>
-    gulp-uglify: 醜化(加密) <br>
-    gulp-concat: 檔案合併 <br>
-    gulp-rename: 改名 <br>
-2. 更改一下 gulpfile.js 進行檔案合併
+    1. 執行 `npm install gulp-minify-css gulp-uglify gulp-concat gulp-rename --save-dev` <br>
+        gulp-minify-css: css 壓縮 <br>
+        gulp-uglify: 醜化(加密) <br>
+        gulp-concat: 檔案合併 <br>
+        gulp-rename: 改名 <br>
+    2. 更改一下 gulpfile.js 進行檔案合併
 ``` js
 var gulp = require('gulp');
 var concat = require('gulp-concat');
@@ -77,7 +77,7 @@ function ConcatFunc() {
 gulp.task('concat', ConcatFunc);
 gulp.task('default', ['concat']);
 ```
-3. 將檔案壓縮並改名
+    3. 將檔案壓縮並改名
 ``` js
 var gulp = require('gulp');
 var concat = require('gulp-concat');
@@ -105,7 +105,7 @@ gulp.task('concat', ConcatFunc);
 gulp.task('minify-css', ['concat'], MinifyCssFunc);
 gulp.task('default', ['minify-css']);
 ```
-4. 將 js 做壓縮並改名
+    4. 將 js 做壓縮並改名
 ``` js 
 var gulp = require('gulp');
 var concat = require('gulp-concat');
@@ -146,10 +146,10 @@ gulp.task('uglify-js', UglifyJsFunc);
 gulp.task('default', ['minify-css', 'uglify-js']);
 ```
 
-5. 打包壓縮 html <br/>
-    執行 `npm install gulp-html-replace gulp-minify-html --save-dev` <br/>
-    gulp-html-replace:  替換 html 本文 <br/>
-    gulp-minify-html: html 壓縮 <br/>
+    5. 打包壓縮 html 
+        執行 `npm install gulp-html-replace gulp-minify-html --save-dev`
+        gulp-html-replace:  替換 html 本文 
+        gulp-minify-html: html 壓縮 
 ``` js
 var gulp = require('gulp');
 var concat = require('gulp-concat');
@@ -203,9 +203,9 @@ gulp.task('html-replace', HtmlReplaceFunc);
 gulp.task('default', ['minify-css', 'uglify-js', 'html-replace']);
 ```
 
-6. 建立 SASS /SCSS 環境 <br/>
-    執行 `npm install gulp-compass --save-dev` <br/>
-    在專案下建立 style 資料夾，裡面包含 scss / css 資料夾，在 .scss 的檔案要引入 @charset "UTF-8";
+    6. 建立 SASS /SCSS 環境 
+        執行 `npm install gulp-compass --save-dev` 
+        在專案下建立 style 資料夾，裡面包含 scss / css 資料夾，在 .scss 的檔案要引入 @charset "UTF-8";
 ``` js
 var gulp = require('gulp');
 var compass = require('gulp-compass');
